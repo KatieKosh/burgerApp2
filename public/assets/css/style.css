@@ -1,0 +1,14 @@
+body {
+padding-top: 125px;
+font-family: cursive !important;
+background-size: cover;
+background-image: url("hamburger.jpeg");
+
+
+}
+
+.menu {
+background-color: white;
+height: 700px;
+
+}

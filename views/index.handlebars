@@ -1,0 +1,171 @@
+
+
+
+
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-2 menu">
+      <h2>Burger Line-Up</h2>
+      <ul>
+
+        {{#each burgers}}
+
+
+          {{#unless this.devoured}}
+
+            <li>
+              {{this.id}}. {{this.burger_name}}
+
+              <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+                <input type="hidden" name="devoured" value="true">
+                <button class="waves-effect waves-light btn" type="submit">Devour it!</button>
+              </form>
+
+            </li>
+          {{/unless}}
+        {{/each}}
+      </ul>
+      <div id="burger-area"></div>
+
+    </div>
+
+
+
+
+    <div class="col-sm-8" id="cntr">
+    			<h1>Add a Burger</h1>
+    			<form class="create-update-form" action="burgers/create" method="POST">
+    				<div class="form-group">
+    					<label for="burgers">Burger Name:</label>
+    					<input type="text" id="burgers" name="burger_name">
+    				</div>
+    				<button class="btn btn-info" type="submit">Add Burger</button>
+    			</form>
+    		</div>
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="col-sm-8">
+    <h4 class="center-align">Add a burger</h4>
+    <form class="create-update-form" action="buffalo/create" method="POST">
+
+      <div class="form-group">
+        <label for="ba">Burger name:</label>
+        <input type="text" id="ba" name="burger_name">
+      </div>
+
+      <button class="waves-effect waves-light btn" type="submit">Submit</button>
+    </form>
+</div> -->
+
+
+
+
+      <div class="col-sm-2 menu">
+        <h2>Devoured</h2>
+        <ul>
+          {{#each burgers}}
+            {{#if this.devoured}}
+              <li>
+                {{this.id}}. {{this.burger_name}}
+              </li>
+            {{/if}}
+          {{/each}}
+        </ul>
+    </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="row">
+    <div class="col s6">
+
+      <h4>Burgers to eat:</h4>
+
+        <ul>
+          {{#each burgers}}
+            {{#unless this.devoured}}
+              <li>
+                {{this.id}}. {{this.burger_name}}
+
+                <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+                  <input type="hidden" name="devoured" value="true">
+                  <button class="waves-effect waves-light btn" type="submit">Devour it!</button>
+                </form>
+
+              </li>
+            {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+
+      <div class="col s6">
+        <h4>Burgers already eaten:</h4>
+
+          <ul>
+            {{#each burgers}}
+              {{#if this.devoured}}
+                <li>
+                  {{this.id}}. {{this.burger_name}}
+                </li>
+              {{/if}}
+            {{/each}}
+          </ul>
+      </div>
+  </div>
+
+  <h4 class="center-align">Add a burger</h4>
+  <form class="create-update-form" action="burgers/create" method="POST">
+
+    <div class="form-group">
+      <label for="ba">Burger name:</label>
+      <input type="text" id="ba" name="burger_name">
+    </div>
+
+    <button class="waves-effect waves-light btn" type="submit">Submit</button>
+  </form> -->
